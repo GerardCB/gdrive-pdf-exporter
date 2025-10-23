@@ -186,6 +186,29 @@ Copy the entire script below, paste it into the console, and press `Enter`.
     
     console.log(`Found ${images.length} pages\n`);
     
+    // Extract filename from page title
+    let filename = 'document.pdf';
+    try {
+        let pageTitle = document.title;
+        // Remove " - Google Drive" suffix if present
+        pageTitle = pageTitle.replace(/ - Google Drive$/i, '').trim();
+        
+        if (pageTitle) {
+            // Sanitize filename - remove invalid characters
+            pageTitle = pageTitle.replace(/[<>:"/\\|?*]/g, '-');
+            
+            // Ensure .pdf extension
+            if (!pageTitle.toLowerCase().endsWith('.pdf')) {
+                pageTitle += '.pdf';
+            }
+            
+            filename = pageTitle;
+            console.log(`Using filename: ${filename}\n`);
+        }
+    } catch (e) {
+        console.log('Could not extract filename, using default\n');
+    }
+    
     let pdf = null;
     let totalLinksAdded = 0;
     let startTime = Date.now();
@@ -285,7 +308,7 @@ Copy the entire script below, paste it into the console, and press `Enter`.
     console.log(`\n=== Saving PDF ===`);
     
     // Save the PDF
-    pdf.save('document.pdf');
+    pdf.save(filename);
     
     // Completion
     updateProgress('Complete! ✓', 100, images.length, totalLinksAdded);
@@ -302,14 +325,14 @@ Copy the entire script below, paste it into the console, and press `Enter`.
     console.log(`✓ JPEG quality: ${(CONFIG.jpegQuality * 100).toFixed(0)}%`);
     console.log(`✓ PDF compression: ${CONFIG.pdfCompression ? 'Enabled' : 'Disabled'}`);
     
-    alert(`PDF Created Successfully!\n\n` +
-          `File saved as: document.pdf`);
+    alert(`✅ PDF Created Successfully!\n\n` +
+          `File saved as: ${filename}`);
     
 })();
 ```
 
 ### Step 4: Download
-The PDF will automatically download as `document.pdf` to your default downloads folder.
+The PDF will automatically download using the original document name from Google Drive (or `document.pdf` if the name cannot be extracted).
 
 ## Tips for Better Quality
 
