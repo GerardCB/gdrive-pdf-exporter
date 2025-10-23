@@ -303,7 +303,7 @@ Copy the entire script below, paste it into the console, and press `Enter`.
     console.log(`✓ PDF compression: ${CONFIG.pdfCompression ? 'Enabled' : 'Disabled'}`);
     
     alert(`PDF Created Successfully!\n\n` +
-          `File saved as: optimized-document.pdf`);
+          `File saved as: document.pdf`);
     
 })();
 ```
