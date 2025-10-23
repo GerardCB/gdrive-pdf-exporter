@@ -132,7 +132,7 @@ The PDF will automatically download as `download.pdf` to your default downloads 
 - Check if the browser console shows any error messages
 - Try refreshing the page and running again
 
-## Output only contains the first few pages of the original document
+### Output only contains the first few pages of the original document
 - Scroll through all pages first to load the images. Ensure they are fully loaded and visible before running the script
 - Try refreshing the page and waiting for it to fully load
 
