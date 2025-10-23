@@ -4,7 +4,7 @@ A JavaScript console script to export Google Drive documents as high-quality PDF
 
 ## ⚠️ Disclaimer
 
-**This script is intended for personal use only.** Only use it on documents you own or have explicit permission to download. Respect copyright and Google's Terms of Service.
+**This script is intended for personal use only.** Only use it on documents you own or have explicit permission to download.
 
 ## What It Does
 
