@@ -1,6 +1,6 @@
 # Google Drive PDF Exporter
 
-A JavaScript console script to export Google Drive documents when the download option is disabled. The resulting documents are optimized, high-quality PDFs with working hyperlinks.
+A browser (JavaScript) console script to export Google Drive documents when the download option is disabled. The resulting documents are optimized, high-quality PDFs with working hyperlinks.
 
 ## ⚠️ Disclaimer
 
